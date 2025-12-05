@@ -2,90 +2,114 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="theme-color" content="#f4f4f4">
+  <meta name="theme-color" content="#0d0d0d">
   <title>Cici Eşek</title>
 
   <style>
-    /* ---- Genel minimal görünüm ---- */
+    /* ---- Genel Sayfa Stili ---- */
     html, body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #f4f4f4;
-      color: #1a1a1a;
-      font-family: "Segoe UI", Inter, Roboto, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: #0b0b0b;
+      color: #eaeaea;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    /* Merkezi minimal kutu */
+    /* Hafif gradient + ışık efekti */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle at center, #1a1a1a, #000);
+      z-index: -1;
+      animation: subtleGlow 12s ease-in-out infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes subtleGlow {
+      0% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.85; }
+    }
+
+    /* ---- Ana mesaj alanı ---- */
     .hello-message {
+      margin: 40px;
       text-align: center;
-      padding: 40px;
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.04);
-      width: 380px;
-
-      animation: fadeSoft 0.8s ease-out both;
+      animation: fadeUp 1.4s ease-out both;
     }
 
-    @keyframes fadeSoft {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+      to   { opacity: 1; transform: translateY(0); filter: blur(0); }
     }
 
-    /* Başlık minimalist */
-    h1 {
-      font-size: 26px;
-      margin: 0 0 14px 0;
+    /* ---- Uyarı mesajları ---- */
+    .logout-messages {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      pointer-events: none;
+      color: #ff4a4a;
       font-weight: 600;
-      color: #111;
+      font-size: 20px;
+      text-shadow: 0 0 12px #ff000066;
+      animation: softPulse 3s infinite ease-in-out;
     }
 
-    h2, h3 {
-      font-size: 15px;
-      font-weight: 400;
-      color: #555;
-      margin: 6px 0;
+    @keyframes softPulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
     }
 
-    /* Görsel yumuşak ve sade */
+    /* ---- Görsel ---- */
     img {
-      width: 210px;
-      border-radius: 12px;
-      margin-top: 18px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      width: 300px;
+      filter: drop-shadow(0 0 28px rgba(255,255,255,0.15))
+              drop-shadow(0 10px 16px rgba(0,0,0,0.4));
+      transition: transform 0.35s ease, filter 0.35s ease;
     }
 
     img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 26px rgba(0,0,0,0.1);
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 38px rgba(255,255,255,0.25))
+              drop-shadow(0 14px 22px rgba(0,0,0,0.55));
     }
 
-    /* Sol üst uyarı minimalist kırmızı ton */
-    .logout-messages {
-      position: fixed;
-      top: 18px;
-      left: 20px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #d33;
-      opacity: 0.9;
-
-      animation: softBlink 2.8s ease-in-out infinite;
+    /* ---- Arka plan derinlik animasyonu ---- */
+    @keyframes backgroundBlur {
+      0% { filter: none; }
+      90% { filter: blur(0); }
+      95% { filter: blur(2px); }
+      100% { filter: blur(0); }
     }
 
-    @keyframes softBlink {
-      0%   { opacity: 0.6; }
-      50%  { opacity: 1; }
-      100% { opacity: 0.6; }
+    body {
+      animation: backgroundBlur 14s infinite ease-in-out;
+    }
+
+    /* ---- Başlıklar ---- */
+    h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #eee, #999);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 22px rgba(255,255,255,0.08);
+    }
+
+    h2, h3 {
+      color: #ccc;
+      text-shadow: 0 0 12px rgba(255,255,255,0.06);
     }
   </style>
+
 </head>
 
 <body>
