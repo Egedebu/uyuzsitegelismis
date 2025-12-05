@@ -1,18 +1,3 @@
-/* global Element */
-
-/**
- *  The Annoying Site
- *  https://theannoyingsite.com
- *
- *  Author:
- *    Feross Aboukhadijeh
- *    https://feross.org
- *
- *  Patreon:
- *    If you enjoyed this, please support me on Patreon!
- *    https://www.patreon.com/feross
- */
-
 const SCREEN_WIDTH = window.screen.availWidth
 const SCREEN_HEIGHT = window.screen.availHeight
 const WIN_WIDTH = 480
@@ -83,15 +68,15 @@ const VIDEOS = [
 ]
 
 const FILE_DOWNLOADS = [
-  './static/cat-blue-eyes.jpg',
-  './static/cat-ceiling.jpg',
-  './static/cat-crosseyes.jpg',
-  './static/cat-cute.jpg',
-  './static/cat-hover.jpg',
-  './static/cat-marshmellows.jpg',
-  './static/cat-small-face.jpg',
-  './static/cat-smirk.jpg',
-  './static/patreon.png'
+  'https://thegoogle.neocities.org/annoyinsite/1.png',
+  'https://thegoogle.neocities.org/annoyinsite/2.png',
+  'https://thegoogle.neocities.org/annoyinsite/3.png',
+  'https://thegoogle.neocities.org/annoyinsite/4.png',
+  'https://thegoogle.neocities.org/annoyinsite/5.png',
+  'https://thegoogle.neocities.org/annoyinsite/6.png',
+  'https://thegoogle.neocities.org/annoyinsite/7.png',
+  'https://thegoogle.neocities.org/annoyinsite/8.png',
+  'https://thegoogle.neocities.org/annoyinsite/9.png'
 ]
 
 const PHRASES = [
@@ -142,6 +127,7 @@ const LOGOUT_SITES = {
   Woot: ['GET', 'https://account.woot.com/logout'],
   Wordpress: ['GET', 'https://wordpress.com/wp-login.php?action=logout'],
   Yahoo: ['GET', 'https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=https://www.yahoo.com/'],
+  ChatCPT: ['GET', 'https://chatgpt.com/auth/logout'],
   YouTube: ['POST', 'https://www.youtube.com', { action_logout: '1' }]
 }
 
@@ -707,7 +693,7 @@ function requestWebauthnAttestation () {
         // User:
         user: {
           id: new Uint8Array(16),
-          name: 'YOU_ARE_HACKED@THEANNOYINGSITE.COM',
+          name: 'YOU_ARE_HACKED@KESİNLİKLEBENDEĞİLİM.COM',
           displayName: 'YOU ARE HACKED'
         },
 
